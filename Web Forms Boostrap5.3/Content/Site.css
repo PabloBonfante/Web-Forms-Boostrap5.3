@@ -1,0 +1,766 @@
+﻿main > .container {
+    padding: 60px 15px 0;
+}
+
+span.asp-form-check {
+    display: block;
+    min-height: 1.5rem;
+}
+
+.asp-select {
+    display: block;
+    min-height: 1rem;
+    min-width: 1rem;
+}
+
+.asp-form-check input,
+.asp-select {
+    --bs-form-check-bg: var(--bs-body-bg);
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-form-check-bg);
+    background-image: var(--bs-form-check-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.asp-form-check label {
+    margin-left: 5px;
+}
+
+.asp-form-check input[type=checkbox] {
+    border-radius: 0.25em;
+}
+
+.asp-form-check input[type=radio],
+.asp-select {
+    border-radius: 50%;
+}
+
+.asp-form-check input:active,
+.asp-select:active {
+    filter: brightness(90%);
+}
+
+.asp-form-check input:focus,
+.asp-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.asp-form-check input:checked,
+.asp-select-checked .asp-select {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.asp-form-check input:checked[type=checkbox] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.asp-form-check input:checked[type=radio],
+.asp-select-checked .asp-select {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.asp-form-check input[type=checkbox]:indeterminate {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+}
+
+.asp-form-switch.asp-form-check input {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    width: 2em;
+    background-image: var(--bs-form-switch-bg);
+    background-position: left center;
+    border-radius: 2em;
+    transition: background-position 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .asp-form-switch .asp-form-check input {
+        transition: none;
+    }
+}
+
+.asp-form-switch.asp-form-check input:focus {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
+}
+
+.asp-form-switch.asp-form-check input:checked {
+    background-position: right center;
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme=dark] .asp-form-switch.asp-form-check input:not(:checked):not(:focus) {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%28255, 255, 255, 0.25%29'/%3e%3c/svg%3e");
+}
+
+.asp-pagination {
+    --bs-pagination-padding-x: 0.75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: var(--bs-link-color);
+    --bs-pagination-bg: var(--bs-body-bg);
+    --bs-pagination-border-width: var(--bs-border-width);
+    --bs-pagination-border-color: var(--bs-border-color);
+    --bs-pagination-border-radius: var(--bs-border-radius);
+    --bs-pagination-hover-color: var(--bs-link-hover-color);
+    --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+    --bs-pagination-hover-border-color: var(--bs-border-color);
+    --bs-pagination-focus-color: var(--bs-link-hover-color);
+    --bs-pagination-focus-bg: var(--bs-secondary-bg);
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #0d6efd;
+    --bs-pagination-active-border-color: #0d6efd;
+    --bs-pagination-disabled-color: var(--bs-secondary-color);
+    --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+    --bs-pagination-disabled-border-color: var(--bs-border-color);
+}
+
+.asp-pagination a,
+.asp-pagination span {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: var(--bs-pagination-color);
+    text-decoration: none;
+    background-color: var(--bs-pagination-bg);
+    border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .asp-pagination a,
+    .asp-pagination span {
+        transition: none;
+    }
+}
+
+.asp-pagination a:hover {
+    z-index: 2;
+    color: var(--bs-pagination-hover-color);
+    background-color: var(--bs-pagination-hover-bg);
+    border-color: var(--bs-pagination-hover-border-color);
+}
+
+.asp-pagination a:focus {
+    z-index: 3;
+    color: var(--bs-pagination-focus-color);
+    background-color: var(--bs-pagination-focus-bg);
+    outline: 0;
+    box-shadow: var(--bs-pagination-focus-box-shadow);
+}
+
+.asp-pagination span {
+    z-index: 3;
+    color: var(--bs-pagination-active-color);
+    background-color: var(--bs-pagination-active-bg);
+    border-color: var(--bs-pagination-active-border-color);
+}
+
+.asp-pagination table td:not(:first-child) > a,
+.asp-pagination table td:not(:first-child) > span {
+    margin-left: calc(-1 * var(--bs-border-width));
+}
+
+.asp-pagination table td:first-child > a,
+.asp-pagination table td:first-child > span {
+    border-top-left-radius: var(--bs-pagination-border-radius);
+    border-bottom-left-radius: var(--bs-pagination-border-radius);
+}
+
+.asp-pagination table td:last-child > a,
+.asp-pagination table td:last-child > span {
+    border-top-right-radius: var(--bs-pagination-border-radius);
+    border-bottom-right-radius: var(--bs-pagination-border-radius);
+}
+
+.asp-pagination table td {
+    display: inline-table;
+}
+
+.asp-pagination table {
+    display: flex;
+}
+
+.asp-pagination-origin table {
+    position-anchor: --asp-pagination;
+    position: absolute;
+    bottom: anchor(bottom);
+    left: anchor(left);
+}
+
+.asp-pagination-origin.justify-content-end table {
+    position-anchor: --asp-pagination;
+    position: absolute;
+    bottom: anchor(bottom);
+    right: anchor(right);
+}
+
+.asp-pagination-origin.justify-content-center table {
+    position-anchor: --asp-pagination;
+    position: absolute;
+    bottom: anchor(bottom);
+    right: anchor(right);
+    left: anchor(left);
+}
+
+.asp-pagination-destination {
+    anchor-name: --asp-pagination;
+}
+
+.asp-pagination.asp-pagination-origin > td {
+    padding: 0;
+}
+
+.asp-pagination.justify-content-center table {
+    justify-content: center;
+}
+
+.asp-pagination.justify-content-end table {
+    justify-content: end;
+}
+
+.asp-pagination-lg {
+    --bs-pagination-padding-x: 1.5rem;
+    --bs-pagination-padding-y: 0.75rem;
+    --bs-pagination-font-size: 1.25rem;
+    --bs-pagination-border-radius: var(--bs-border-radius-lg);
+}
+
+.asp-pagination-sm {
+    --bs-pagination-padding-x: 0.5rem;
+    --bs-pagination-padding-y: 0.25rem;
+    --bs-pagination-font-size: 0.875rem;
+    --bs-pagination-border-radius: var(--bs-border-radius-sm);
+}
+
+.asp-pagination > td,
+.asp-table-header > th {
+    --bs-table-bg-state: initial !important;
+    --bs-table-color-state: initial !important;
+    --bs-table-color-type: initial !important;
+    --bs-table-bg-type: initial !important;
+    --bs-table-accent-bg: transparent !important;
+}
+
+.asp-pagination > td {
+    padding: 10px 0 0 0;
+    border-style: none !important;
+}
+
+.asp-table-header {
+    --wp-table-color: var(--bs-primary-text-emphasis);
+    --wp-table-bg: var(--bs-primary-bg-subtle);
+    --wp-table-border-color: var(--bs-primary-border-subtle);
+    --wp-table-link-color: var(--bs-primary-text-emphasis);
+    --wp-table-link-color-hover: #2575e9;
+    --bs-table-bg: var(--wp-table-bg) !important;
+    border-bottom: calc(var(--bs-border-width) * 2) solid var(--wp-table-border-color);
+}
+
+[data-bs-theme=dark] .asp-table-header {
+    --wp-table-link-color-hover: #bbd3f6;
+}
+
+.asp-table-header a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--wp-table-link-color) !important;
+}
+
+.asp-table-header a:hover {
+    color: var(--wp-table-link-color-hover) !important;
+}
+
+.asp-table-header th {
+    text-decoration: none !important;
+    white-space: nowrap;
+    color: var(--wp-table-color) !important;
+    vertical-align: middle;
+}
+
+.asp-table-header > th > a::after {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f127";
+    margin-left: 5px;
+}
+
+.asp-table-header > th.sort-asc > a::after {
+    content: "\F148";
+}
+
+.asp-table-header > th.sort-desc > a::after {
+    content: "\F128";
+}
+
+.asp-table-edit {
+    --bs-table-bg: var(--bs-secondary-bg-subtle);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-control,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-control {
+    border-color: var(--bs-form-invalid-border-color);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-control:focus,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-control:focus {
+    border-color: var(--bs-form-invalid-border-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > textarea.form-control:invalid,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > textarea.form-control:invalid {
+    padding-right: calc(1.5em + 0.75rem);
+    background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select {
+    border-color: var(--bs-form-invalid-border-color);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select:not([multiple]):not([size]),
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select:not([multiple])[size="1"],
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select:not([multiple]):not([size]),
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select:not([multiple])[size="1"],
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select:not([multiple]):not([size]),
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select:not([multiple])[size="1"],
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select:not([multiple]):not([size]),
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select:not([multiple])[size="1"] {
+    --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    padding-right: 4.125rem;
+    background-position: right 0.75rem center, center right 2.25rem;
+    background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .form-select:focus,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .form-select:focus {
+    border-color: var(--bs-form-invalid-border-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .asp-form-check > input,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .asp-form-check > input {
+    border-color: var(--bs-form-invalid-border-color);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .asp-form-check > input:checked,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .asp-form-check > input:checked {
+    background-color: var(--bs-form-invalid-color);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .asp-form-check > input:focus,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .asp-form-check > input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.has-validation:has(span.invalid-feedback[style="display: inline;"]) > .asp-form-check > input ~ label,
+.has-validation:has(span.invalid-feedback[data-val-isvalid="False"]) > .asp-form-check > input ~ label {
+    color: var(--bs-form-invalid-color);
+}
+
+span.invalid-feedback[style="display: inline;"],
+span.invalid-feedback[data-val-isvalid="False"] {
+    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+span.invalid-feedback[data-val-isvalid="False"] {
+    display: inline;
+}
+
+.asp-icon {
+    position: relative;
+}
+
+.btn.asp-icon:has(input:focus-visible) {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+    outline: 0;
+    box-shadow: var(--bs-btn-focus-box-shadow);
+}
+
+.asp-icon input[type=submit],
+.asp-icon input[type=button],
+.asp-icon input[type=image] {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.asp-icon:has(input:disabled),
+.asp-icon:has(input.aspNetDisabled) {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.asp-icon:not(:has(input)) {
+    display: none !important;
+}
+
+input[type=submit].asp-icon,
+input[type=button].asp-icon,
+input[type=image].asp-icon {
+    display: inline-block !important;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fixed-header {
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+@media (min-height: 576px) {
+    .fixed-header {
+        max-height: 370px;
+    }
+}
+
+@media (min-height: 768px) {
+    .fixed-header {
+        max-height: 560px;
+    }
+}
+
+@media (min-height: 992px) {
+    .fixed-header {
+        max-height: 710px;
+    }
+}
+
+@media (min-height: 1200px) {
+    .fixed-header {
+        max-height: 870px;
+    }
+}
+
+@media (min-height: 1400px) {
+    .fixed-header {
+        max-height: 1200px;
+    }
+}
+
+.fixed-header tbody > tr:first-child th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+td.fixed-column,
+td.fixed-column-left {
+    --bs-table-bg: var(--bs-secondary-bg-subtle);
+}
+
+td.fixed-column,
+th.fixed-column
+{
+    right: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+td.fixed-column-left,
+th.fixed-column-left {
+    left: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+.i-ml-3:before {
+    margin-left: 5px;
+}
+
+.i-mr-3:before {
+    margin-right: 5px;
+}
+
+.fixed-alert {
+    position: fixed !important;
+    bottom: 10px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1150;
+    max-width: 90%;
+    min-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-alert > p:first-of-type {
+    max-height: 90vh;
+    overflow: auto;
+}
+
+[disabled="disabled"], .aspNetDisabled {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: none;
+}
+
+.asp-menu {
+    --bs-dropdown-zindex: 1000;
+    --bs-dropdown-min-width: 10rem;
+    --bs-dropdown-padding-x: 0;
+    --bs-dropdown-padding-y: 0.5rem;
+    --bs-dropdown-spacer: 0.125rem;
+    --bs-dropdown-font-size: 1rem;
+    --bs-dropdown-color: var(--bs-body-color);
+    --bs-dropdown-bg: var(--bs-body-bg);
+    --bs-dropdown-border-color: var(--bs-border-color-translucent);
+    --bs-dropdown-border-radius: var(--bs-border-radius);
+    --bs-dropdown-border-width: var(--bs-border-width);
+    --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
+    --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+    --bs-dropdown-divider-margin-y: 0.5rem;
+    --bs-dropdown-box-shadow: var(--bs-box-shadow);
+    --bs-dropdown-link-color: var(--bs-body-color);
+    --bs-dropdown-link-hover-color: var(--bs-body-color);
+    --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
+    --bs-dropdown-link-active-color: #fff;
+    --bs-dropdown-link-active-bg: #0d6efd;
+    --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+    --bs-dropdown-item-padding-x: 1rem;
+    --bs-dropdown-item-padding-y: 0.25rem;
+    --bs-dropdown-header-color: #6c757d;
+    --bs-dropdown-header-padding-x: 1rem;
+    --bs-dropdown-header-padding-y: 0.5rem;
+    --bs-dropdown-item-border-radius: 0.5rem;
+}
+
+.asp-menu a {
+    white-space: nowrap;
+}
+
+.asp-menu > ul > li > a {
+    padding: .5rem !important;
+}
+
+.asp-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.asp-menu .has-popup > a::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.asp-menu .has-popup:empty::after {
+    margin-left: 0;
+}
+
+.asp-menu .has-popup > ul {
+    position: absolute;
+    z-index: var(--bs-dropdown-zindex);
+    min-width: var(--bs-dropdown-min-width);
+    padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+    margin: 0;
+    font-size: var(--bs-dropdown-font-size);
+    color: var(--bs-dropdown-color);
+    text-align: left;
+    background-color: var(--bs-dropdown-bg);
+    background-clip: padding-box;
+    border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-radius: var(--bs-dropdown-border-radius);
+}
+
+.asp-menu a {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    clear: both;
+    font-weight: 400;
+    color: var(--bs-dropdown-link-color);
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    border-radius: var(--bs-dropdown-item-border-radius, 0);
+}
+
+.asp-menu .has-popup li > a {
+    --bs-dropdown-item-border-radius: 0;
+}
+
+.asp-menu .has-popup li > a[href]:not(.selected):not(:active):hover,
+.asp-menu .has-popup li > a[href]:not(.selected):not(:active):focus {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+}
+
+.asp-menu a[href]:active,
+.asp-menu a[href].selected {
+    color: var(--bs-dropdown-link-active-color);
+    background-color: var(--bs-dropdown-link-active-bg);
+}
+
+.asp-menu a.disabled,
+.asp-menu a.aspNetDisabled,
+.asp-menu a:disabled {
+    color: var(--bs-dropdown-link-disabled-color);
+    pointer-events: none;
+    background-color: transparent;
+}
+
+tr[valign=middle] td {
+    vertical-align: middle;
+}
+
+tr[valign=bottom] td {
+    vertical-align: bottom;
+}
+
+tr[valign=top] td {
+    vertical-align: top;
+}
+
+.tree-view {
+    font-family: var(--bs-body-font-family);
+    font-size: 14px;
+    padding: 1rem;
+}
+
+.tree-view table {
+    border: none !important;
+    border-collapse: collapse;
+}
+
+.tree-view td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.tree-view table tr {
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+}
+
+.tree-view img {
+    display: none;
+}
+
+.tree-view td > div {
+    display: block;
+    width: 16px !important;
+    flex-shrink: 0;
+}
+
+.tree-view td > a:has(img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--bs-secondary-text-emphasis);
+    text-decoration: none;
+}
+
+.tree-view td > a:has(img)::before {
+    content: "▾";
+    font-size: 25px;
+}
+
+.tree-view a:hover {
+    background: var(--bs-secondary-bg);
+}
+
+.tree-view td > a:not(img) {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--bs-primary-text-emphasis);
+    font-size: 13px;
+    transition: background 0.12s;
+}
+
+.tree-view td > a.MainContent_TreeView1_0:hover {
+    background: var(--bs-secondary-bg);
+}
+
+.tree-view > div > div {
+    border-left: 1.5px solid var(--bs-border-color);
+    margin-left: 22px;
+    padding-left: 4px;
+}
+
+.tree-view td:not(:has(> a)):not(:has(> div)):has(> img) {
+    width: 2px;
+    min-width: 2px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-left: 1.5px solid var(--bs-border-color);
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.tree-view input[type=checkbox] {
+    vertical-align: center !important;
+}
