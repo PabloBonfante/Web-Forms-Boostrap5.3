@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html class="h-100" lang="es">
+<html lang="es">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -13,12 +13,12 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/Content/css"  />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body class="h-100">
-    <form runat="server" class="d-flex flex-column h-100">
+<body>
+    <form runat="server" class="d-flex flex-column">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--Framework Scripts--%>
@@ -34,8 +34,8 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Path="~/lib/bootstrap/dist/js/theme.min.js" />
                 <asp:ScriptReference Path="~/Scripts/Site.js" />
-                <asp:ScriptReference Path="~/lib/bootstrap/dist/js/theme.min.js"  />
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -59,8 +59,11 @@
                             <li class="nav-item">
                                 <a runat="server" class="nav-link" href="~/Pages/Menu.aspx">Menu</a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a runat="server" class="nav-link" href="~/Pages/Tree.aspx">Tree</a>
+                            </li>
+                            <li class="nav-item">
+                                <a runat="server" class="nav-link" href="~/Pages/ListGroup.aspx">List Group</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GridView
@@ -72,7 +75,7 @@
                                     <li>
                                         <a runat="server" class="dropdown-item" href="~/Pages/SelectedTable.aspx">Selected GridView</a>
                                     </li>
-                                     <li>
+                                    <li>
                                         <a runat="server" class="dropdown-item" href="~/Pages/Crud.aspx">Crud</a>
                                     </li>
                                 </ul>

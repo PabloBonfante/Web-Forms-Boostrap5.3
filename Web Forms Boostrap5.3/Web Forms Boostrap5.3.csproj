@@ -243,14 +243,18 @@
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Pages\ConfirmModal.aspx" />
     <Content Include="Pages\Crud.aspx" />
+    <Content Include="Pages\downloadCrud.aspx" />
     <Content Include="Pages\FormCheck.aspx" />
     <Content Include="Pages\Icons.aspx" />
+    <Content Include="Pages\Idempotence.aspx" />
+    <Content Include="Pages\ListGroup.aspx" />
     <Content Include="Pages\Menu.aspx" />
     <Content Include="Pages\Modals.aspx" />
     <Content Include="Pages\SelectedTable.aspx" />
     <Content Include="Pages\Pagination.aspx" />
     <Content Include="Pages\Toasts.aspx" />
     <Content Include="Pages\Tree.aspx" />
+    <Content Include="Pages\UpdateProgress.aspx" />
     <Content Include="Pages\Validation.aspx" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -260,6 +264,7 @@
     <Content Include="Scripts\Site.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\testProxy.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -312,6 +317,13 @@
     <Compile Include="Pages\Crud.aspx.designer.cs">
       <DependentUpon>Crud.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\downloadCrud.aspx.cs">
+      <DependentUpon>downloadCrud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\downloadCrud.aspx.designer.cs">
+      <DependentUpon>downloadCrud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FormCheck.aspx.cs">
       <DependentUpon>FormCheck.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +337,20 @@
     </Compile>
     <Compile Include="Pages\Icons.aspx.designer.cs">
       <DependentUpon>Icons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Idempotence.aspx.cs">
+      <DependentUpon>Idempotence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Idempotence.aspx.designer.cs">
+      <DependentUpon>Idempotence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListGroup.aspx.cs">
+      <DependentUpon>ListGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListGroup.aspx.designer.cs">
+      <DependentUpon>ListGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
@@ -368,6 +394,13 @@
     <Compile Include="Pages\Tree.aspx.designer.cs">
       <DependentUpon>Tree.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UpdateProgress.aspx.cs">
+      <DependentUpon>UpdateProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UpdateProgress.aspx.designer.cs">
+      <DependentUpon>UpdateProgress.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Validation.aspx.cs">
       <DependentUpon>Validation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -383,6 +416,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Src\Utils\BoostrapIconsCodePoint.cs" />
     <Compile Include="Src\Utils\JSHelper.cs" />
     <Compile Include="Src\WeatherForecast\Models\WeatherForecast.cs" />
     <Compile Include="Src\WeatherForecast\Service\WeatherForecastService.cs" />

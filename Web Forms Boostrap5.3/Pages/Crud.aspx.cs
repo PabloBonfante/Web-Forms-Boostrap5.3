@@ -125,17 +125,6 @@ namespace Web_Forms_Boostrap5._3.Pages
         #endregion
 
         #region Button Click Handlers
-        protected void Btn_Search_Click(object sender, EventArgs e)
-        {
-            BindWeatherForecastData();
-        }
-
-        protected void Btn_ClearFilter_Click(object sender, EventArgs e)
-        {
-            Tb_Filter.Text = string.Empty;
-            BindWeatherForecastData();
-        }
-
         protected void Btn_DeleteSelected_Click(object sender, EventArgs e)
         {
             if (IsValid)

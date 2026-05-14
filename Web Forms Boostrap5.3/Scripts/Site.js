@@ -341,3 +341,27 @@ function Btn_Disabled_Enabled_CSS({ selector, disabled = true }) {
         }
     }
 }
+
+async function downloadCSV(url, fileName = 'file') {
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error('Error en la descarga');
+        }
+
+        const blob = await response.blob();
+        const link = document.createElement('a');
+        const objectUrl = URL.createObjectURL(blob);
+
+        link.href = objectUrl;
+        link.download = fileName + ".csv";
+        link.click();
+
+        URL.revokeObjectURL(objectUrl);
+
+        createBootstrapToastSimple({ bodyText: 'Descarga finalizada', color: 'success', icon: 'bi bi-check2-circle' });
+    } catch (error) {
+        alert('Error al descargar: ' + error.message);
+    }
+}

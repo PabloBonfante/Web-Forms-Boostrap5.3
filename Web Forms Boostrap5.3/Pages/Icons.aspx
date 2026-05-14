@@ -50,5 +50,37 @@
                     ToolTip="Check" />
             </div>
         </div>
+
+        <div class="col-4">
+            <asp:TextBox
+                runat="server"
+                ID="TextBox2"
+                CssClass="form-control form-control-lg asp-icon-search"
+                placeholder="Search..."
+                ToolTip="Search"
+                TextMode="Search" />
+        </div>
+
+        <div class="col-4">
+            <asp:TextBox
+                runat="server"
+                ID="Tb_Search"
+                CssClass="form-control asp-icon-search"
+                placeholder="Search..."
+                ToolTip="Search"
+                TextMode="Search" />
+        </div>
+
+        <div class="col-4">
+            <asp:TextBox
+                runat="server"
+                ID="TextBox1"
+                CssClass="form-control form-control-sm asp-icon-search"
+                placeholder="Search..."
+                ToolTip="Search"
+                TextMode="Search" />
+        </div>
+
+
     </div>
 </asp:Content>

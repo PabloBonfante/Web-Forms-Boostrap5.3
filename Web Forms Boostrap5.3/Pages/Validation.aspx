@@ -21,7 +21,7 @@
         <div class="col-md-4">
             <div class="has-validation">
                 <asp:Label runat="server" Text="Last name" CssClass="form-label" AssociatedControlID="txtLastName" />
-                <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" Text="Otto" />
+                <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control form-control-sm" Text="Otto" />
                 <asp:RequiredFieldValidator runat="server"
                     ControlToValidate="txtLastName"
                     ErrorMessage="Last name is required"

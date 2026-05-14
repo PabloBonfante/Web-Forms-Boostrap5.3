@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Web_Forms_Boostrap5._3
+namespace Web_Forms_Boostrap5._3.Pages
 {
-    public partial class SiteMaster : MasterPage
+    public partial class ListGroup : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

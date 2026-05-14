@@ -68,5 +68,9 @@
         runat="server"
         ID="DS_WeatherForecast"
         TypeName="Web_Forms_Boostrap5._3.Src.WeatherForecast.WeatherForecastService"
-        SelectMethod="GetWeatherForecast"></asp:ObjectDataSource>
+        SelectMethod="GetWeatherForecast">
+        <SelectParameters>
+            <asp:Parameter Name="SimulateDelay" Type="Boolean" DefaultValue="false" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>

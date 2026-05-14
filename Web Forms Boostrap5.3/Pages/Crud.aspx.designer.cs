@@ -24,24 +24,6 @@ namespace Web_Forms_Boostrap5._3.Pages
         protected global::System.Web.UI.WebControls.TextBox Tb_Filter;
 
         /// <summary>
-        /// Control Btn_Search.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Search;
-
-        /// <summary>
-        /// Control Btn_ClearFilter.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_ClearFilter;
-
-        /// <summary>
         /// Control Btn_DeleteSelected.
         /// </summary>
         /// <remarks>
@@ -85,6 +67,15 @@ namespace Web_Forms_Boostrap5._3.Pages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDL_Paginator;
+
+        /// <summary>
+        /// Control Cb_SimulateDelay.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox Cb_SimulateDelay;
 
         /// <summary>
         /// Control DS_WeatherForecast.

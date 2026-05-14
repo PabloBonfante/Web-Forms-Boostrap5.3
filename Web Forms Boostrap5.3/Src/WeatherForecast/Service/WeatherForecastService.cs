@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Web;
 
 namespace Web_Forms_Boostrap5._3.Src.WeatherForecast
@@ -15,8 +17,11 @@ namespace Web_Forms_Boostrap5._3.Src.WeatherForecast
         };
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public DataTable GetWeatherForecast()
+        public DataTable GetWeatherForecast(bool SimulateDelay = false)
         {
+            if(SimulateDelay)
+                Thread.Sleep(2000); // Espera 2 segundos para simular trabajo
+
             // Intentar obtener de caché
             DataTable dt = (DataTable)HttpRuntime.Cache["WeatherForecast"];
 
@@ -137,6 +142,27 @@ namespace Web_Forms_Boostrap5._3.Src.WeatherForecast
             // Actualizar la caché con los nuevos datos
             HttpRuntime.Cache.Insert("WeatherForecast", dt, null,
                 DateTime.Now.AddMinutes(30), TimeSpan.Zero);
+        }
+
+        public string DownloadWeatherForecast()
+        {
+            var sb = new StringBuilder();
+            var dt = GetWeatherForecast();
+
+            // Encabezados
+            sb.AppendLine("Id;Date;TemperatureC;TemperatureF;Summary");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                sb.AppendFormat("{0};", row["Id"]);
+                sb.AppendFormat("{0:yyyy-MM-dd};", row["Date"]);
+                sb.AppendFormat("{0:N0} °C;", row["TemperatureC"]);
+                sb.AppendFormat("{0:N0} °F;", row["TemperatureF"]);
+                sb.AppendFormat("{0};", row["Summary"]);
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
         }
 
         private DataTable ConvertToDataTable(List<WeatherForecast> forecasts)

@@ -11,43 +11,43 @@ namespace Web_Forms_Boostrap5._3.Pages
 {
 
 
-    public partial class SelectedTable
+    public partial class Idempotence
     {
 
         /// <summary>
-        /// Control UP.
+        /// Control Btn_Idempotence.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UP;
+        protected global::System.Web.UI.WebControls.Button Btn_Idempotence;
 
         /// <summary>
-        /// Control WeatherForecast.
+        /// Control L_Idempotence.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView WeatherForecast;
+        protected global::System.Web.UI.WebControls.Literal L_Idempotence;
 
         /// <summary>
-        /// Control Literal.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Control DS_WeatherForecast.
+        /// Control H_Idempotence.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource DS_WeatherForecast;
+        protected global::System.Web.UI.WebControls.HiddenField H_Idempotence;
     }
 }
