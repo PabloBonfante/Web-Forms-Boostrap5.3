@@ -6,7 +6,7 @@
         <asp:CheckBoxList
             runat="server"
             ID="CheckBoxListPaises"
-            CssClass="asp-form-check asp-list-group asp-list-group-item-action asp-list-group-flush active-item-primary"
+            CssClass="asp-form-check asp-list-group asp-list-group-item-action asp-list-group-flush"
             RepeatLayout="UnorderedList">
             <asp:ListItem Text="México" Value="MX"></asp:ListItem>
             <asp:ListItem Text="Argentina" Value="AR"></asp:ListItem>

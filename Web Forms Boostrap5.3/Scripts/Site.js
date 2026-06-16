@@ -39,12 +39,18 @@ function closeModal(selector) {
     bsModal.hide();
 }
 
-function autoFocus(selectorFocus = '[autofocus]')
+function autoFocus(selectorFocus = '[autofocus], .autofocus')
 {
-    console.log(selectorFocus)
     const focusElement = document.querySelector(selectorFocus);
-    if (focusElement)
-        focusElement.focus();
+    if (!focusElement) return;
+
+    focusElement.focus();
+
+    // Si es input o textarea, mover cursor al final del texto
+    if (focusElement.tagName === 'INPUT' || focusElement.tagName === 'TEXTAREA') {
+        const length = focusElement.value.length;
+        focusElement.setSelectionRange(length, length);
+    }
 }
 
 function createBootstrapToast({ headerText = '', bodyText = '', color = 'danger', icon = 'bi bi-exclamation-triangle' }) {

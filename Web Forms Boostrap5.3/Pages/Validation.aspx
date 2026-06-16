@@ -43,7 +43,7 @@
                     CssClass="invalid-feedback"
                     Display="Dynamic"
                     SetFocusOnError="true"
-                    ValidationGroup="VG" />
+                    ValidationGroup="VG"></asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -109,11 +109,17 @@
         </div>
 
         <div class="col-12">
-            <asp:ValidationSummary ID="vsSummary" runat="server" CssClass="alert alert-danger mt-3" DisplayMode="BulletList" ShowSummary="true" />
+            <asp:ValidationSummary ID="vsSummary" runat="server" CssClass="alert alert-danger" DisplayMode="BulletList" ShowSummary="true" ValidationGroup="VG" />
         </div>
 
         <div class="col-12">
             <asp:Button ID="btnSubmit" runat="server" Text="Submit form" CssClass="btn btn-primary" OnClick="btnSubmit_Click" CausesValidation="true" ValidationGroup="VG" />
         </div>
     </div>
+
+    <style>
+        [data-valsummary] ul {
+            margin: 0;
+        }
+    </style>
 </asp:Content>
