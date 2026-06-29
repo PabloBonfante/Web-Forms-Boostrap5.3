@@ -102,9 +102,9 @@
                     ErrorMessage="You must agree before submitting."
                     CssClass="invalid-feedback"
                     Display="Dynamic"
-                    OnServerValidate="cvTerms_ServerValidate"
-                    ValidateEmptyText="true"
-                    ValidationGroup="VG" />
+                    EnableClientScript="true"
+                    ClientValidationFunction="isChecked" 
+                    ValidationGroup="VG"/>
             </div>
         </div>
 
@@ -122,4 +122,11 @@
             margin: 0;
         }
     </style>
+
+    <script type="text/javascript">
+    function isChecked(sender, args) {
+        const isChecked = $('#<%= chkTerms.ClientID %>').is(':checked');
+        args.IsValid = isChecked;
+    }
+    </script>
 </asp:Content>

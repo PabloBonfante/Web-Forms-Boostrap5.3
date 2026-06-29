@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using Web_Forms_Boostrap5._3.Src.Utils;
 
 namespace Web_Forms_Boostrap5._3.Pages
 {
@@ -14,14 +10,15 @@ namespace Web_Forms_Boostrap5._3.Pages
 
         }
 
-        protected void cvTerms_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = chkTerms.Checked;
-        }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            JSHelper.Create(Page)
+           .ShowToast(
+               bodyText: "Validacion Exitosa",
+               color: "success",
+               icon: "bi bi-hand-thumbs-up",
+               showHeader: false
+           ).Execute();
         }
     }
 }
