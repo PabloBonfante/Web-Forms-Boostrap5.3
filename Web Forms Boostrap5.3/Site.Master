@@ -65,6 +65,9 @@
                             <li class="nav-item">
                                 <a runat="server" class="nav-link" href="~/Pages/ListGroup.aspx">List Group</a>
                             </li>
+                             <li class="nav-item">
+                                <a runat="server" class="nav-link" href="~/Pages/Patron.aspx">Patron de bloqueo</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">GridView
                                 </a>
