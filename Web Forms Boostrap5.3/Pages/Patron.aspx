@@ -18,11 +18,9 @@
                         <circle cx="20" cy="20" r="3" />
                         <circle cx="50" cy="20" r="3" />
                         <circle cx="80" cy="20" r="3" />
-                                                   
                         <circle cx="20" cy="50" r="3" />
                         <circle cx="50" cy="50" r="3" />
                         <circle cx="80" cy="50" r="3" />
-                                                   
                         <circle cx="20" cy="80" r="3" />
                         <circle cx="50" cy="80" r="3" />
                         <circle cx="80" cy="80" r="3" />
@@ -34,41 +32,51 @@
                         CssClass="form-control form-control-sm" ToolTip="Patron de desbloqueo"
                         ReadOnly="true" AutoCompleteType="None"></asp:TextBox>
 
-                    <button type="button" class="btn btn-primary btn-sm" onclick="cargarPatronGuardado()">Cargar Patrón</button>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="limpiarPatron()">Limpiar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="limpiarPatron()">Limpiar</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        let lock = null;
+        $(document).ready(function () {
+            // Inicializar lock
+            lock = new PatternLock('#lock', {
+                onPattern: function (pattern) {
+                    if (pattern) {
+                        document.getElementById('PatternLock').value = pattern;
+                        cookie('patron', pattern); // Guarda automáticamente
+                    }
+                },
+                vibrate: false
+            });
 
-        // Inicializar el lock
-        var lock = new PatternLock('#lock', {
-            onPattern: function (pattern) {
-                console.log('Patrón dibujado:', pattern);
-                if (pattern)
-                    document.getElementById('PatternLock').value = pattern;
-            },
-            vibrate: false
+            // Cargar patrón guardado al iniciar
+            var patronGuardado = cookie('patron');
+            if (patronGuardado) {
+                lock.setPattern(parseInt(patronGuardado));
+                document.getElementById('PatternLock').value = patronGuardado;
+            }
         });
 
-        // Función para cargar un patrón guardado
-        function cargarPatronGuardado() {
-            // Simulamos un patrón guardado en la base de datos
-            var patronGuardado = 12369;
-
-            // Cargar el patrón
-            lock.setPattern(patronGuardado);
-
-            document.getElementById('PatternLock').value = patronGuardado;
-
-            console.log('Patrón cargado:', lock.getPattern());
+        // Función cookie
+        function cookie(nombre, valor) {
+            if (valor) {
+                document.cookie = nombre + "=" + encodeURIComponent(valor) + ";path=/;max-age=" + 60 * 60 * 24 * 30;
+            } else {
+                var c = document.cookie.split('; ');
+                for (var i = 0; i < c.length; i++) {
+                    if (c[i].split('=')[0] == nombre) return decodeURIComponent(c[i].split('=')[1]);
+                }
+                return null;
+            }
         }
 
         function limpiarPatron() {
             lock.clear();
             document.getElementById('PatternLock').value = '';
+            cookie('patron', ''); // Borra la cookie
         }
     </script>
 </asp:Content>

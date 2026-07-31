@@ -67,7 +67,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             success: success,
             error: error,
             getPattern: getPattern,
-            setPattern: setPattern // NUEVO MÉTODO
+            setPattern: setPattern
         });
 
         function success() {
@@ -247,11 +247,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             return pt.matrixTransform(element.getScreenCTM().inverse());
         }
 
-        // NUEVO MÉTODO: Carga un patrón previamente guardado
         function setPattern(pattern) {
             clear();
-
-            // Convertir a array de números si es string o number
             var patternArray;
             if (typeof pattern === 'string') {
                 patternArray = pattern.split('').map(Number);
@@ -264,20 +261,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return;
             }
 
-            // Recorrer cada dígito del patrón
             patternArray.forEach(function (digit, index) {
-                var targetDot = dots[index]; // El primer punto es índice 0
+                var targetDot = dots[index];
 
-                // Buscar el punto correspondiente al dígito (1-9)
                 for (var i = 0; i < dots.length; i++) {
-                    if (dots.index(i) + 1 === digit) {
+                    if (i + 1 === digit) {
                         targetDot = dots[i];
                         break;
                     }
                 }
 
                 if (targetDot && isAvailable(targetDot)) {
-                    // Si es el primer punto, crear línea desde el punto
                     if (index === 0) {
                         var x = targetDot.getAttribute('cx');
                         var y = targetDot.getAttribute('cy');
@@ -288,7 +282,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                         code.push(targetDot);
                         currentline = line;
                     } else {
-                        // Para puntos subsiguientes, conectar con el anterior
                         var prevDot = dots[patternArray[index - 1] - 1];
                         if (prevDot) {
                             var x1 = prevDot.getAttribute('cx');
@@ -296,13 +289,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                             var x2 = targetDot.getAttribute('cx');
                             var y2 = targetDot.getAttribute('cy');
 
-                            // Actualizar la línea anterior para conectar con el nuevo punto
                             if (currentline) {
                                 currentline.setAttribute('x2', x2);
                                 currentline.setAttribute('y2', y2);
                             }
 
-                            // Crear nueva línea desde el punto actual
                             var newLine = createNewLine(x2, y2);
                             var newMarker = createNewMarker(x2, y2);
                             actives.append(newMarker);
@@ -314,10 +305,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 }
             });
 
-            // Si hay un patrón cargado, añadir clase de éxito visual
-            if (code.length > 0) {
+            if (currentline) 
+                currentline.remove();
+
+            if (code.length > 0) 
                 svg.addClass('success');
-            }
         }
     }
 
