@@ -101,6 +101,16 @@
                                                 CssClass="asp-form-check"
                                                 OnCheckedChanged="Cb_Select_CheckedChanged" />
                                         </ItemTemplate>
+                                        <EditItemTemplate>
+                                            <asp:CheckBox
+                                                runat="server"
+                                                ID="Cb_Select"
+                                                Checked='<%# IsRecordSelected(Eval("Id")) %>'
+                                                data-id='<%# Eval("Id") %>'
+                                                ToolTip="Select this record for batch operations"
+                                                CssClass="asp-form-check"
+                                                Enabled="false" />
+                                        </EditItemTemplate>
                                         <HeaderStyle Width="50" />
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Date" SortExpression="Date">
@@ -216,9 +226,9 @@
                                         </EditItemTemplate>
                                         <ItemTemplate>
                                             <div class="d-flex gap-2">
-                                                <asp:ImageButton ID="Btn_Edit" runat="server"
+                                                <asp:Button ID="Btn_Edit" runat="server"
                                                     UseSubmitBehavior="false"
-                                                    AlternateText="&#xF4CB;"
+                                                    Text="&#xF4CB;"
                                                     CssClass="asp-icon btn btn-primary btn-sm rounded-circle p-2 lh-1"
                                                     CommandName="Edit"
                                                     ToolTip="Edit this weather record" />

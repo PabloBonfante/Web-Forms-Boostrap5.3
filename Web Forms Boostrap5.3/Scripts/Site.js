@@ -39,18 +39,11 @@ function closeModal(selector) {
     bsModal.hide();
 }
 
-function autoFocus(selectorFocus = '[autofocus], .autofocus')
-{
+function autoFocus(selectorFocus = '[autofocus], .autofocus') {
     const focusElement = document.querySelector(selectorFocus);
-    if (!focusElement) return;
 
-    focusElement.focus();
-
-    // Si es input o textarea, mover cursor al final del texto
-    if (focusElement.tagName === 'INPUT' || focusElement.tagName === 'TEXTAREA') {
-        const length = focusElement.value.length;
-        focusElement.setSelectionRange(length, length);
-    }
+    if (typeof WebForm_AutoFocus === 'function' && focusElement && focusElement.id) 
+        WebForm_AutoFocus(focusElement.id);
 }
 
 function createBootstrapToast({ headerText = '', bodyText = '', color = 'danger', icon = 'bi bi-exclamation-triangle' }) {
@@ -209,18 +202,18 @@ function removeBootstrapAlert() {
 }
 
 function areYouSure({ event, headerText = '¿Estás seguro?', bodyText = 'Una vez eliminado, no podrás recuperar la información.', ValidationGroup = '', ShowWorking = '' }) {
-    if (event === undefined || event === '') 
+    if (event === undefined || event === '')
         return false;
 
     const btn = event.target;
 
-    if (!btn) 
+    if (!btn)
         return false;
 
     // Si requiere que valide y NO pasa la validacion retorno false
     if (ValidationGroup !== undefined && ValidationGroup !== '' && !Page_ClientValidate(ValidationGroup))
         return false;
-    
+
     if (btn.hasAttribute('data-ok-confirm')) {
         closeConfirmModal();
         // Pregunta si quiere que muestre el modal de ShowWorking
@@ -332,7 +325,7 @@ function closeConfirmModal(btn) {
     bsModal.hide();
     modal.remove();
 
-    if (btn) 
+    if (btn)
         Btn_Disabled_Enabled_CSS({ selector: '#' + btn, disabled: false });
 }
 
