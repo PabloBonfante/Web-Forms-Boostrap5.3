@@ -275,6 +275,10 @@ span.asp-form-check {
     border-style: none !important;
 }
 
+table[border] tr:has(+ tr.asp-pagination) > td {
+    border-style: none;
+}
+
 .asp-table-header {
     --wp-table-color: var(--bs-primary-text-emphasis);
     --wp-table-bg: var(--bs-primary-bg-subtle);
