@@ -104,6 +104,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -254,6 +257,7 @@
     <Content Include="Pages\FormCheck.aspx" />
     <Content Include="Pages\Icons.aspx" />
     <Content Include="Pages\Idempotence.aspx" />
+    <Content Include="Pages\JSInvokable.aspx" />
     <Content Include="Pages\ListGroup.aspx" />
     <Content Include="Pages\Menu.aspx" />
     <Content Include="Pages\Modals.aspx" />
@@ -359,6 +363,13 @@
     </Compile>
     <Compile Include="Pages\Idempotence.aspx.designer.cs">
       <DependentUpon>Idempotence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JSInvokable.aspx.cs">
+      <DependentUpon>JSInvokable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\JSInvokable.aspx.designer.cs">
+      <DependentUpon>JSInvokable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListGroup.aspx.cs">
       <DependentUpon>ListGroup.aspx</DependentUpon>
