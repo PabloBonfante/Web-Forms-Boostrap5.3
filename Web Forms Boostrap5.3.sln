@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.37206.5
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37906.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web Forms Boostrap5.3", "Web Forms Boostrap5.3\Web Forms Boostrap5.3.csproj", "{08F081ED-A249-42BF-A5B7-8BF263925022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "Auth\Auth.csproj", "{00E0CD2C-33BA-4E1A-AAC5-27168229B096}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{08F081ED-A249-42BF-A5B7-8BF263925022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08F081ED-A249-42BF-A5B7-8BF263925022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08F081ED-A249-42BF-A5B7-8BF263925022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E0CD2C-33BA-4E1A-AAC5-27168229B096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E0CD2C-33BA-4E1A-AAC5-27168229B096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E0CD2C-33BA-4E1A-AAC5-27168229B096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E0CD2C-33BA-4E1A-AAC5-27168229B096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

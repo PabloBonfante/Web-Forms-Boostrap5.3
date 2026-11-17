@@ -18,7 +18,7 @@ namespace Web_Forms_Boostrap5._3.Pages
             string summary = row.Cells[4].Text;
 
             Literal.Text = $@"
-            <table class='table table-sm table-bordered caption-top'>
+            <table class='table table-sm table-bordered caption-top align-middle'>
                 <caption>Selected Row</caption>
                 <tbody>
                     <tr>

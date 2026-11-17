@@ -9,6 +9,7 @@ using System.Web;
 
 namespace Web_Forms_Boostrap5._3.Src.WeatherForecast
 {
+    [DataObject(true)]
     public class WeatherForecastService
     {
         private static readonly string[] Summaries = new[]
@@ -16,7 +17,7 @@ namespace Web_Forms_Boostrap5._3.Src.WeatherForecast
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        [DataObjectMethod(DataObjectMethodType.Select)]
+        [DataObjectMethod(DataObjectMethodType.Select, true)]
         public DataTable GetWeatherForecast(bool SimulateDelay = false)
         {
             if(SimulateDelay)

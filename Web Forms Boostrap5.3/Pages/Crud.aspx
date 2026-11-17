@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="CRUD" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Crud.aspx.cs" Inherits="Web_Forms_Boostrap5._3.Pages.Crud" %>
+<%@ Import Namespace="Web_Forms_Boostrap5._3.Src.WeatherForecast" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -74,7 +75,8 @@
                                     CssClass="table table-hover table-sm align-middle mb-0"
                                     DataSourceID="DS_WeatherForecast"
                                     DataKeyNames="Id"
-                                    GridLines="None">
+                                    GridLines="None"
+                                    OnRowCommand="GV_WeatherForecast_RowCommand">
                                     <Columns>
                                         <asp:TemplateField>
                                             <EditItemTemplate></EditItemTemplate>
@@ -228,6 +230,7 @@
                                                         Text="&#xF4CB;"
                                                         CssClass="asp-icon btn btn-primary btn-sm rounded-circle p-2 lh-1"
                                                         CommandName="Edit"
+                                                        CommandArgument='<%# Container.DataItem.SerializeRow<WeatherForecast>() %>'
                                                         ToolTip="Edit this weather record" />
 
                                                     <asp:Button ID="Btn_Cancel" runat="server"

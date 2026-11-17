@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using Web_Forms_Boostrap5._3.Src.Utils;
 using Web_Forms_Boostrap5._3.Src.WeatherForecast;
@@ -34,7 +35,7 @@ namespace Web_Forms_Boostrap5._3.Pages
         protected void Cb_Select_CheckedChanged(object sender, EventArgs e)
         {
             var selectCheckbox = (CheckBox)sender;
-            int recordId = int.TryParse(selectCheckbox.Attributes["data-id"] ?? "", out int parsedId) ? parsedId : -1;
+            int recordId = selectCheckbox.Attributes.GetValue<int>("data-id");
 
             if (selectCheckbox.Checked && !SelectedRecordIds.Contains(recordId))
             {
@@ -205,6 +206,14 @@ namespace Web_Forms_Boostrap5._3.Pages
             }
 
             BindWeatherForecastData();
+        }
+
+        protected void GV_WeatherForecast_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Edit"))
+            {
+                var item = e.CommandArgument.DeserializeRow<WeatherForecast>();
+            }
         }
     }
 }

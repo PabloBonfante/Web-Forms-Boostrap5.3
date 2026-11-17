@@ -16,7 +16,7 @@
                         CssClass="table table-sm text-center align-middle m-0 calendar-table"
                         DayNameFormat="Shortest"
                         NextPrevFormat="FullMonth">
-                        <DayHeaderStyle CssClass="bg-secondary-subtle text-secondary-emphasis fw-semibold small" />
+                        <DayHeaderStyle CssClass="bg-secondary-subtle text-secondary-emphasis fw-semibold small" BorderWidth="0" />
                         <NextPrevStyle CssClass="text-primary-emphasis fw-semibold small text-decoration-none" />
                         <OtherMonthDayStyle CssClass="text-body-tertiary" />
                         <SelectedDayStyle CssClass="bg-primary text-white fw-bold rounded-circle" />
@@ -24,6 +24,7 @@
                         <TitleStyle CssClass="bg-primary-subtle text-primary-emphasis fw-bold py-2" />
                         <TodayDayStyle CssClass="bg-warning-subtle text-warning-emphasis fw-bold rounded-circle" />
                         <WeekendDayStyle CssClass="bg-body-secondary" />
+                        <DayStyle ForeColor="" />
                     </asp:Calendar>
                 </div>
 
