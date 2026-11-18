@@ -17,7 +17,7 @@ namespace Auth.Frm
             if (!IsValid) return;
 
             string usuario = txtUsuario.Text.Trim();
-            string password = txtPassword.Text;
+            string password = txtPassword.Text.Trim();
 
             if (!AuthManager.Login(usuario, password, chkRecordarme.Checked))
             {

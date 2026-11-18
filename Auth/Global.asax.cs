@@ -35,23 +35,22 @@ namespace Auth
             }
         }
 
-        void Application_EndRequest(object sender, EventArgs e)
+        void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            // Manejo global del 401/403 para que no muestre la página fea de IIS
-            var ctx = HttpContext.Current;
-            if (ctx.Response.StatusCode == 401 && !ctx.Response.IsRequestBeingRedirected)
-            {
-                var returnUrl = ctx.Server.UrlEncode(ctx.Request.RawUrl);
-                ctx.Response.Redirect("~/Login?ReturnUrl=" + returnUrl);
-            }
+            if (Request.RequestType != "GET" || HttpContext.Current.Session == null)
+                return;
+
+            string currentFrm = System.IO.Path.GetFileNameWithoutExtension(Request.Url.AbsolutePath);
+            if (!RouteConfig.HasAccessToRoute(currentFrm))
+                Response.Redirect($"/UnauthorizedAccess?page={HttpUtility.ParseQueryString(currentFrm)}");
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
             try
             {
-                // 3. Transfiere el control a tu página de error.
-                //    Server.Transfer preserva el contexto actual y evita una redirección HTTP.
+                // Transfiere el control a la página de error.
+                // Server.Transfer preserva el contexto actual y evita una redirección HTTP.
                 Server.Transfer("~/Frm/Error.aspx", true);
             }
             catch

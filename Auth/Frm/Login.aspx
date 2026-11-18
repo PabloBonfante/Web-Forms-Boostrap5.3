@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Iniciar sesión</title>
     <link runat="server" rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link runat="server" rel="stylesheet" href="~/Content/Site.css" />
 </head>
 <body>
     <form id="form1" runat="server" role="form" aria-label="Formulario de inicio de sesión">
@@ -25,10 +26,10 @@
                                 CssClass="alert alert-danger"
                                 role="alert"
                                 aria-live="assertive"
-                                Visible="false" 
-                                style="display: block;" />
+                                Visible="false"
+                                Style="display: block;" />
 
-                            <div class="form-group">
+                            <div class="form-group has-feedback">
                                 <asp:Label runat="server" AssociatedControlID="txtUsuario" Text="Usuario"
                                     CssClass="control-label" />
                                 <asp:TextBox ID="txtUsuario" runat="server"
@@ -40,15 +41,18 @@
                                     autocomplete="username"
                                     autofocus="autofocus" />
 
+                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtUsuario"
-                                    SetFocusOnError="true" ErrorMessage="Ingrese un nombre de usuario"
-                                    CssClass="text-danger" Display="Dynamic" ValidationGroup="VG_Login" />
+                                    SetFocusOnError="true" ErrorMessage="*Ingrese un nombre de usuario"
+                                    CssClass="invalid-feedback" Display="Dynamic" ValidationGroup="VG_Login" />
                             </div>
 
 
-                            <div class="form-group">
+                            <div class="form-group has-feedback">
                                 <asp:Label runat="server" AssociatedControlID="txtPassword" Text="Contraseña"
                                     CssClass="control-label" />
+
                                 <asp:TextBox ID="txtPassword" runat="server"
                                     TextMode="Password"
                                     CssClass="form-control"
@@ -58,11 +62,12 @@
                                     aria-required="true"
                                     autocomplete="current-password" />
 
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPassword"
-                                    SetFocusOnError="true" ErrorMessage="Ingrese una contraseña"
-                                    CssClass="text-danger" Display="Dynamic" ValidationGroup="VG_Login" />
-                            </div>
+                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtPassword"
+                                    SetFocusOnError="true" ErrorMessage="*Ingrese una contraseña" 
+                                    CssClass="invalid-feedback" Display="Dynamic" ValidationGroup="VG_Login" />
+                            </div>
 
                             <div class="checkbox" aria-label="Recordarme" title="Marcar para mantener la sesión iniciada">
                                 <label>
@@ -71,11 +76,12 @@
                                 </label>
                             </div>
 
-                            <asp:Button ID="btnLogin" runat="server"
-                                Text="Entrar" UseSubmitBehavior="false"
+                            <asp:Button ID="btnLogin" ClientIDMode="Static" runat="server"
+                                Text="Entrar"
                                 CausesValidation="true" ValidationGroup="VG_Login"
                                 CssClass="btn btn-primary btn-block"
                                 OnClick="btnLogin_Click"
+                                OnClientClick="if(Page_ClientValidate('VG_Login')) btnToggleLoading({ selector: this, busyText: 'Iniciando Session...' })"
                                 ToolTip="Iniciar sesión con las credenciales ingresadas"
                                 aria-label="Iniciar sesión" />
                         </div>
@@ -83,6 +89,14 @@
                 </div>
             </div>
         </main>
+
+        <asp:PlaceHolder runat="server">
+            <%: Scripts.Render("~/Scripts/Site.js") %>
+        </asp:PlaceHolder>
+
+        <script>
+            onGlobalEnter(() => click('#btnLogin'));
+        </script>
     </form>
 </body>
 </html>
